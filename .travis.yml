@@ -7,14 +7,10 @@ env:
   global:
   - COMPOSER_ARGS="--no-interaction"
 
-before_install:
-- composer require phpunit/phpunit:7.4.* php-coveralls/php-coveralls:^2.0
-- composer install --dev
-
 install:
 - travis_retry composer install $COMPOSER_ARGS
 
-script: php vendor/phpunit/phpunit/phpunit  --coverage-clover ./log/clover.xml
+script: php vendor/phpunit/phpunit/phpunit  --coverage-clover ./clover.xml
 
 after_script:
-- php vendor/bin/coveralls -v
+- vendor/bin/php-coveralls -v
