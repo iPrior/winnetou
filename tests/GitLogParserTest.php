@@ -21,17 +21,17 @@ class GitLogParserTest extends TestCase
      * @var array
      */
     protected static $actualData = [
-        '50d34c1d2159a6f2e856b79c1efe766fb84240b0' => [
-            'hash' => '50d34c1d2159a6f2e856b79c1efe766fb84240b0',
-            'dateTime' => 'Sun Oct 14 12:23:26 2018 +0300',
-            'issueKey' => 'WATCH-2',
-            'comment' => 'unit tests'
+        '93721fcc46715f70a7d9e0c8cd43cf963866403d' => [
+            'hash' => '93721fcc46715f70a7d9e0c8cd43cf963866403d',
+            'dateTime' => 'Sun Oct 14 15:13:40 2018 +0300',
+            'issueKey' => 'WINNETOU-2',
+            'comment' => 'Test commit'
         ],
-        '2deecd044e5de5494cdbc7a84e99e1a9c835d441' => [
-            'hash' => '2deecd044e5de5494cdbc7a84e99e1a9c835d441',
-            'dateTime' => 'Sun Oct 14 11:58:20 2018 +0300',
-            'issueKey' => 'WATCH-1',
-            'comment' => 'First test commit'
+        'e08da065a9433610edf26a260a45a4a7bdb1ccd3' => [
+            'hash' => 'e08da065a9433610edf26a260a45a4a7bdb1ccd3',
+            'dateTime' => 'Sun Oct 14 15:10:44 2018 +0300',
+            'issueKey' => 'WINNETOU-1',
+            'comment' => 'First commit'
         ],
     ];
 
