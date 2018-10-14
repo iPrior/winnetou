@@ -1,0 +1,7 @@
+.idea
+.vagrant
+vendor
+coverage
+config.php
+log
+*.log

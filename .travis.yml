@@ -1,0 +1,13 @@
+language: php
+
+php:
+- '7.2'
+
+env:
+  global:
+  - COMPOSER_ARGS="--no-interaction"
+
+install:
+- travis_retry composer install $COMPOSER_ARGS
+
+script: php vendor/phpunit/phpunit/phpunit
