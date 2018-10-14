@@ -5,12 +5,12 @@ php:
 
 env:
   global:
-  - COMPOSER_ARGS="--no-interaction"
+    - COMPOSER_ARGS="--no-interaction"
 
 install:
-- travis_retry composer install $COMPOSER_ARGS
+  - travis_retry composer install $COMPOSER_ARGS
 
 script: php vendor/phpunit/phpunit/phpunit  --coverage-clover ./clover.xml
 
 after_script:
-- vendor/bin/php-coveralls -v
+  - vendor/bin/php-coveralls -v
