@@ -23,10 +23,10 @@ class WinnetouConsoleCommand extends Command
     protected function configure()
     {
         $this->setName('winnetou')
-            ->addArgument(self::ARG_CONFIG_PATH, InputArgument::REQUIRED, 'Path to config file')
-            ->addArgument(self::ARG_START_WORK_DAY_DT, InputArgument::OPTIONAL, 'Start work day DateTime', null)
-            ->addArgument(self::ARG_DEBUG, InputArgument::OPTIONAL, 'Debug flag (1 or 0)', null)
-            ->setDescription('Generate Jira WorkLog by git commits');
+            ->addArgument(self::ARG_CONFIG_PATH, InputArgument::REQUIRED, 'path to config file')
+            ->addArgument(self::ARG_START_WORK_DAY_DT, InputArgument::OPTIONAL, 'working day start time', null)
+            ->addArgument(self::ARG_DEBUG, InputArgument::OPTIONAL, 'Debug (1 or 0)', null)
+            ->setDescription('Create Jira WorkLog by git commits');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
