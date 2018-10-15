@@ -72,28 +72,31 @@ class GitLogCombine
     {
         $startDt = $this->startWorkDayDt;
         $sorted = $this->rawCommits;
-        usort($sorted, function (GitLogVO $a, GitLogVO $b) {
-            $aTS = $a->getDateTime()->getTimestamp();
-            $bTS = $b->getDateTime()->getTimestamp();
+        if ($sorted) {
 
-            if ($aTS === $bTS) {
-                return 0;
+            usort($sorted, function (GitLogVO $a, GitLogVO $b) {
+                $aTS = $a->getDateTime()->getTimestamp();
+                $bTS = $b->getDateTime()->getTimestamp();
+
+                if ($aTS === $bTS) {
+                    return 0;
+                }
+
+                return $aTS < $bTS ? -1 : 1;
+            });
+
+
+            if (current($sorted)->getDateTime()->getTimestamp() < $startDt->getTimestamp()) {
+                $startDt = clone current($sorted)->getDateTime();
+                $startDt->sub(new \DateInterval('PT1H'));
             }
 
-            return $aTS < $bTS ? -1 : 1;
-        });
-
-
-        if (current($sorted)->getDateTime()->getTimestamp() < $startDt->getTimestamp()) {
-            $startDt = clone current($sorted)->getDateTime();
-            $startDt->sub(new \DateInterval('PT1H'));
-        }
-
-        foreach ($sorted as $item) {
-            $timeSpent = $item->getDateTime()->getTimestamp() - $startDt->getTimestamp();
-            $started = clone $startDt;
-            $this->sortedCommits[] = new GitLogCombineDataVO($started, $timeSpent, $item);
-            $startDt = clone $item->getDateTime();
+            foreach ($sorted as $item) {
+                $timeSpent = $item->getDateTime()->getTimestamp() - $startDt->getTimestamp();
+                $started = clone $startDt;
+                $this->sortedCommits[] = new GitLogCombineDataVO($started, $timeSpent, $item);
+                $startDt = clone $item->getDateTime();
+            }
         }
     }
 }
