@@ -56,7 +56,7 @@ return [
 
 Run command:
 
-`php cli.php winnetou <config-path> [<start-work-dt> [<debug>]]`
+`php cli.php winnetou <config-path> [<debug> [<start-work-dt>]]`
 
 
 ### License

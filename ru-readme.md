@@ -54,7 +54,7 @@ return [
 
 Для запуска выполнить команду:
 
-`php cli.php winnetou <config-path> [<start-work-dt> [<debug>]]`
+`php cli.php winnetou <config-path> [<debug> [<start-work-dt>]]`
 
 
 ### License

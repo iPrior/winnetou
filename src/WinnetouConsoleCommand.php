@@ -24,8 +24,8 @@ class WinnetouConsoleCommand extends Command
     {
         $this->setName('winnetou')
             ->addArgument(self::ARG_CONFIG_PATH, InputArgument::REQUIRED, 'path to config file')
-            ->addArgument(self::ARG_START_WORK_DAY_DT, InputArgument::OPTIONAL, 'working day start time', null)
             ->addArgument(self::ARG_DEBUG, InputArgument::OPTIONAL, 'Debug (1 or 0)', null)
+            ->addArgument(self::ARG_START_WORK_DAY_DT, InputArgument::OPTIONAL, 'working day start time', null)
             ->setDescription('Create Jira WorkLog by git commits');
     }
 
