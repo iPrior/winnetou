@@ -23,10 +23,6 @@ class GitLogParser
      */
     public function __construct(GitLogParserConfigVO $config)
     {
-        if ('Linux' !== PHP_OS) {
-            throw new \Exception('Sorry, i am work  only on linux =(');
-        }
-
         $this->config = $config;
     }
 
@@ -56,7 +52,7 @@ class GitLogParser
             $commits[] = '';
             $pattern = $this->config->getPattern();
             $matches = [];
-            preg_match_all($pattern, implode(PHP_EOL, $commits), $matches);
+            preg_match_all($pattern, implode("\n", $commits), $matches);
 
             if ($matches && isset($matches['hash'])) {
                 foreach ($matches['hash'] as $i => $hash) {

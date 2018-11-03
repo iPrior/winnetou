@@ -7,7 +7,6 @@ Branch | Travis-CI                                                             |
 master | ![Travis-Ci](https://travis-ci.org/iPrior/winnetou.svg?branch=master) | [![Coverage Status](https://coveralls.io/repos/github/iPrior/winnetou/badge.svg?branch=master)](https://coveralls.io/github/iPrior/winnetou?master)
 v1     | ![Travis-Ci](https://travis-ci.org/iPrior/winnetou.svg?branch=v1)     | [![Coverage Status](https://coveralls.io/repos/github/iPrior/winnetou/badge.svg?branch=v1)](https://coveralls.io/github/iPrior/winnetou?branch=v1)
 
-**Works only on Linux OS!** Because `find` utility used
 
 [Russian doc](./ru-readme.md)
 

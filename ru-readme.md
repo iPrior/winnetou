@@ -7,8 +7,6 @@ v1     | ![Travis-Ci](https://travis-ci.org/iPrior/winnetou.svg?branch=v1)
 
 Списывает время в Jira (issue WorkLog) по коммитам из гита.
 
-**Работает только под Linux!** потому что используется утилита `find`
-
 ```text
 +--------+------------+------------+---------------------+---------------------+------------------+----------------------------------------------------------------------------------------+
 | Status | WorkLog ID | Issue      | Start DateTime      | End DateTime        | Work time (sec.) | Description                                                                            |

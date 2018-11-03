@@ -116,10 +116,8 @@ class Winnetou
 
     protected function findRepositories()
     {
-        $dirs = [];
         foreach ($this->config->getRootDirs() as $rootDir) {
-            $cmd = 'find ' . $rootDir . ' -type d -name .git';
-            exec($cmd . ' 2>&1', $dirs);
+            $dirs = glob($rootDir . '/.git');
 
             foreach ($dirs as $item) {
                 if (preg_match('/vendor/', $item)) {
